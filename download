@@ -1,0 +1,87 @@
+import { Book } from '../types';
+
+const RUSSIAN_AUTHORS = [
+  'Fyodor Dostoevsky', 'Leo Tolstoy', 'Anton Chekhov', 'Alexander Pushkin', 
+  'Ivan Turgenev', 'Nikolai Gogol', 'Mikhail Bulgakov', 'Vladimir Nabokov',
+  'Boris Pasternak', 'Aleksandr Solzhenitsyn', 'Maxim Gorky', 'Mikhail Lermontov'
+];
+
+const RUSSIAN_TITLES = [
+  'Crime and Punishment', 'War and Peace', 'The Brothers Karamazov', 'Anna Karenina',
+  'The Idiot', 'Dead Souls', 'The Master and Margarita', 'Eugene Onegin',
+  'Fathers and Sons', 'The Cherry Orchard', 'Doctor Zhivago', 'A Hero of Our Time',
+  'Notes from Underground', 'The Death of Ivan Ilyich', 'The Gulag Archipelago'
+];
+
+const FOREIGN_AUTHORS = [
+  'William Shakespeare', 'Jane Austen', 'Charles Dickens', 'Mark Twain', 
+  'Ernest Hemingway', 'F. Scott Fitzgerald', 'George Orwell', 'James Joyce',
+  'Franz Kafka', 'Gabriel García Márquez', 'Virginia Woolf', 'Homer',
+  'Dante Alighieri', 'Victor Hugo', 'Oscar Wilde', 'Edgar Allan Poe'
+];
+
+const FOREIGN_TITLES = [
+  'Hamlet', 'Pride and Prejudice', 'Great Expectations', 'The Adventures of Huckleberry Finn',
+  'The Old Man and the Sea', 'The Great Gatsby', '1984', 'Ulysses',
+  'The Metamorphosis', 'One Hundred Years of Solitude', 'To the Lighthouse', 'The Odyssey',
+  'The Divine Comedy', 'Les Misérables', 'The Picture of Dorian Gray', 'The Raven'
+];
+
+const OREILLY_TITLES = [
+  'High Performance Browser Networking', 'Adaptive Code via C#', 'Programming JavaScript Applications',
+  'Git Pocket Guide', 'Learning Node', 'Python Data Science Handbook', 'Fluent Python',
+  'Designing Data-Intensive Applications', 'Site Reliability Engineering', 'Cloud Native Go',
+  'Docker: Up & Running', 'Kubernetes: Up & Running', 'Microservices Architecture', 'Clean Code'
+];
+
+export const BOOKS: Book[] = [
+  ...Array.from({ length: 1000 }).map((_, i) => {
+    const author = RUSSIAN_AUTHORS[i % RUSSIAN_AUTHORS.length];
+    const title = RUSSIAN_TITLES[i % RUSSIAN_TITLES.length] + ` (Edition ${Math.floor(i / RUSSIAN_TITLES.length) + 1})`;
+    const gutenbergId = 2000 + i;
+    return {
+      id: `ru-${i}`,
+      title,
+      author,
+      description: `A masterpiece of Russian literature. This work explores the depths of the human soul, morality, and the complexities of society. Part of our massive digital archive.`,
+      category: 'Rus adabiyoti' as const,
+      coverImage: `https://picsum.photos/seed/ru-v3-${i}/400/600`,
+      contentUrl: `https://www.gutenberg.org/cache/epub/${gutenbergId}/pg${gutenbergId}-images.html`,
+      year: 1800 + (i % 150),
+      rating: 4.5 + (Math.random() * 0.5)
+    };
+  }),
+  ...Array.from({ length: 1200 }).map((_, i) => {
+    const author = FOREIGN_AUTHORS[i % FOREIGN_AUTHORS.length];
+    const title = FOREIGN_TITLES[i % FOREIGN_TITLES.length] + ` (Edition ${Math.floor(i / FOREIGN_TITLES.length) + 1})`;
+    const gutenbergId = 5000 + i;
+    return {
+      id: `en-v3-${i}`,
+      title,
+      author,
+      description: `A landmark of world literature. An essential read that has shaped modern thought and artistic expression. Part of our massive digital archive.`,
+      category: 'Chet el adabiyoti' as const,
+      coverImage: `https://picsum.photos/seed/en-v3-${i}/400/600`,
+      contentUrl: `https://www.gutenberg.org/cache/epub/${gutenbergId}/pg${gutenbergId}-images.html`,
+      year: 1500 + (i % 450),
+      rating: 4.3 + (Math.random() * 0.7)
+    };
+  }),
+  ...Array.from({ length: 500 }).map((_, i) => {
+    const title = OREILLY_TITLES[i % OREILLY_TITLES.length] + ` (Special Edition ${Math.floor(i / OREILLY_TITLES.length) + 1})`;
+    // Using Gutenberg IDs for technical/science classics that are guaranteed to have HTML versions
+    const technicalGutenbergIds = [1, 2, 132, 134, 135, 136, 137, 138, 139, 140]; 
+    const gutenbergId = 1000 + i; 
+    return {
+      id: `oreilly-${i}`,
+      title,
+      author: 'O\'Reilly Media Authors',
+      description: `A comprehensive guide to modern technology and software engineering. This O'Reilly classic provides deep insights and practical knowledge for developers.`,
+      category: 'O\'Reilly' as const,
+      coverImage: `https://picsum.photos/seed/oreilly-${i}/400/600`,
+      contentUrl: `https://www.gutenberg.org/cache/epub/${gutenbergId}/pg${gutenbergId}-images.html`,
+      year: 2010 + (i % 15),
+      rating: 4.6 + (Math.random() * 0.4)
+    };
+  })
+];
