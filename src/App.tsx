@@ -594,6 +594,20 @@ function About({ total, authorCount, onBrowse }: { total: number; authorCount: n
         ))}
       </ul>
 
+      <h2 className="mb-4 font-serif text-3xl font-semibold">Manbalar va mualliflik huquqi</h2>
+      <p className="mb-4 max-w-2xl font-sans leading-relaxed text-ink/75">
+        Saytga faqat ommaviy mulkka o'tgan yoki ochiq ruxsatli asarlar kiritilgan. Kitoblar bizning serverimizda
+        saqlanmaydi, matn va audio manba saytlardan ko'rsatiladi: Project Gutenberg, LibriVox, Internet Archive va
+        Ziyouz.com. Har bir kitob oynasida manba ko'rsatilgan.
+      </p>
+      <p className="mb-14 max-w-2xl font-sans leading-relaxed text-ink/75">
+        Agar siz huquq egasi bo'lsangiz va kitobni olib tashlashni xohlasangiz,{' '}
+        <a href="mailto:gamer20061805@gmail.com" className="font-semibold text-moss underline underline-offset-2">
+          gamer20061805@gmail.com
+        </a>{' '}
+        manziliga yozing, kitob tezda katalogdan chiqariladi.
+      </p>
+
       <h2 className="mb-4 font-serif text-3xl font-semibold">Ko'z uchun qulay dizayn</h2>
       <p className="mb-10 max-w-2xl font-sans leading-relaxed text-ink/75">
         Iliq qog'oz tusi, yumshoq shakllar va o'qishga mos serif shrift uzoq mutolaada ko'zni charchatmaslik uchun tanlangan.

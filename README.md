@@ -6,6 +6,8 @@ ruxsatli matnlar ishlatiladi. Kitoblar to'g'ridan-to'g'ri brauzerda o'qiladi, ro
 
 **Texnologiyalar:** React 19 · TypeScript · Tailwind CSS 4 · Motion · Vite 6 (backend yo'q, sof statik sayt)
 
+**Litsenziya:** kod MIT ([LICENSE](LICENSE)); kitoblar o'z manbalarining huquqi ostida ([legal/](legal/)).
+
 ## Mundarija
 
 1. [Imkoniyatlar](#imkoniyatlar)
@@ -16,7 +18,7 @@ ruxsatli matnlar ishlatiladi. Kitoblar to'g'ridan-to'g'ri brauzerda o'qiladi, ro
 6. [Kitob manbalari va parserlar](#kitob-manbalari-va-parserlar)
 7. [Yangi kitob qo'shish](#yangi-kitob-qoshish)
 8. [Kitob ma'lumotlari tuzilmasi](#kitob-malumotlari-tuzilmasi)
-9. [Mualliflik huquqi va manbalar](#mualliflik-huquqi-va-manbalar)
+9. [Mualliflik huquqi va litsenziyalar](#mualliflik-huquqi-va-litsenziyalar)
 10. [Muammolarni hal qilish](#muammolarni-hal-qilish)
 
 ---
@@ -50,6 +52,7 @@ npm run dev          # http://localhost:3000
 | `npm run build` | Production build, natija `dist/` papkasida |
 | `npm run preview` | Build'ni lokal tekshirish (4173-port) |
 | `npm run lint` | TypeScript tekshiruvi (`tsc --noEmit`) |
+| `npm run licenses` | `legal/THIRD_PARTY_LICENSES.md` ni qayta yaratish |
 | `npm run books:sync` | Barcha kitob manbalarini yangilash ([pastga qarang](#kitob-manbalari-va-parserlar)) |
 
 Atrof-muhit o'zgaruvchilari (`.env`) **kerak emas**.
@@ -111,6 +114,12 @@ Ziyo-book/
 ├── vite.config.ts              Vite sozlamasi (React, Tailwind, chunklar)
 ├── vercel.json                 Vercel: build, kesh va xavfsizlik sarlavhalari
 ├── tsconfig.json
+├── LICENSE                     kod litsenziyasi (MIT)
+│
+├── legal/                      huquqiy hujjatlar
+│   ├── README.md               qaysi litsenziya nimaga tegishli
+│   ├── SOURCES-RIGHTS.md       kitob manbalarining huquqiy holati, takedown tartibi
+│   └── THIRD_PARTY_LICENSES.md paketlar litsenziyalari (avtomatik: npm run licenses)
 │
 ├── src/
 │   ├── main.tsx                React'ni ishga tushiradi
@@ -131,6 +140,7 @@ Ziyo-book/
 │       ├── catalog.ts          katalogni kerak bo'lganda yuklaydi (lazy chunk)
 │       ├── books.ts            barcha manba fayllarini birlashtiradi
 │       ├── sources.json        qo'lda qo'shiladigan kitoblar manifesti
+│       ├── blocklist.json      huquq egasi talabi bilan olib tashlangan kitoblar
 │       └── books-*.json        har bir manbaning natijasi (pastga qarang)
 │
 └── scripts/                    kitob parserlari (faqat Node, qo'shimcha paket yo'q)
@@ -140,6 +150,7 @@ Ziyo-book/
     ├── sync-ziyouz.mjs         Ziyouz.com o'zbek kutubxonasi
     ├── add-sources.mjs         Internet Archive va qo'lda manifest
     ├── fetch-gutenberg.mjs     Gutendex API (yuklab olish sonlari)
+    ├── gen-licenses.mjs        legal/THIRD_PARTY_LICENSES.md ni yaratadi
     └── lib.mjs                 umumiy yordamchilar (CSV, fetch, til nomlari)
 ```
 
@@ -282,25 +293,28 @@ Har bir kitob (`src/types.ts` dagi `Book`):
 | `downloads` | number | Haqiqiy yuklab olish soni (mashhurlik uchun) |
 | `rank` | number? | Yuklab olish soni yo'q manbalar uchun sifat bali |
 
-## Mualliflik huquqi va manbalar
+## Mualliflik huquqi va litsenziyalar
 
-Loyiha kodi sizniki, kitoblar esa o'z egalariga tegishli. Saytga faqat huquqi aniq materiallar kiritilgan.
-
-| Manba | Nima | Huquqiy holat |
+| Nima | Litsenziya | Qayerda |
 |---|---|---|
-| [Project Gutenberg](https://www.gutenberg.org) | Matnlar, muqovalar | AQSH'da ommaviy mulk. Gutenberg o'z shartlariga ega |
-| [LibriVox](https://librivox.org) | Audiokitoblar | Ommaviy mulk (volontyorlar o'qishi) |
-| [Internet Archive](https://archive.org) | Qo'lda tanlangan klassiklar | Faqat tekshirilgan, 1925-yilgacha chop etilgan yoki ommaviy mulk asarlar |
-| [Ziyouz.com](https://ziyouz.com) | O'zbek kitoblari (PDF) | Faqat xalq ijodi, mumtoz adabiyot va vafotiga 70 yildan oshgan mualliflar (O'zbekiston qonuni bo'yicha). Fayllar nusxalanmaydi, ularning serveridan yuklanadi, manba ko'rsatiladi |
+| **Loyiha kodi** (`src/`, `scripts/`, sozlamalar) | MIT | [`LICENSE`](LICENSE) |
+| **Ochiq kodli paketlar** (React, Motion, ikonkalar) | MIT, ISC, 0BSD | [`legal/THIRD_PARTY_LICENSES.md`](legal/THIRD_PARTY_LICENSES.md) |
+| **Kitoblar, audio, muqovalar** | har bir manbaning o'z huquqi (MIT ularga tegishli **emas**) | [`legal/SOURCES-RIGHTS.md`](legal/SOURCES-RIGHTS.md) |
+
+Manbalar: [Project Gutenberg](https://www.gutenberg.org), [LibriVox](https://librivox.org),
+[Internet Archive](https://archive.org), [Ziyouz.com](https://ziyouz.com). Saytga faqat ommaviy mulk yoki ochiq
+ruxsatli materiallar kiritilgan, kitob fayllari bizning serverimizda saqlanmaydi.
 
 Muhim:
 - Ziyouz.com'da mualliflik huquqi ostidagi zamonaviy asarlar ham bor. Parser ularni **ataylab olmaydi**
-  (ruxsat ro'yxati `scripts/sync-ziyouz.mjs` ichida). Bu ro'yxatni kengaytirishdan oldin huquqni tekshiring.
-- Nashr va tarjimalarning o'z huquqi bo'lishi mumkin (masalan, 1992-yilgi sharh).
-- Ziyouz PDF'lari ularning serveridan yuklanadi, ya'ni ularning trafigidan foydalanadi. Katta trafik kutilsa,
-  sayt egalari bilan kelishing.
-- Ma'lumotlarni qayta yig'ishda manbalarning foydalanish shartlariga rioya qiling (so'rovlar orasidagi
-  oraliqlarni kamaytirmang).
+  (ruxsat ro'yxati `scripts/sync-ziyouz.mjs` ichida). Ziyouz egalaridan yozma ruxsat olinganligi qayd etilmagan,
+  ommaviy foydalanishdan oldin kelishib olish tavsiya etiladi.
+- "AQSHda ommaviy mulk" boshqa mamlakatlarda ham ommaviy mulk degani emas (O'zbekistonda muddat vafotdan 70 yil).
+- Ziyouz PDF'lari ularning serveridan yuklanadi va ularning trafigidan foydalanadi.
+- Huquq egasi talabi bilan kitobni olib tashlash: `src/data/blocklist.json` ga `id` qo'shing
+  ([tartib](legal/SOURCES-RIGHTS.md#5-kitobni-olib-tashlash-takedown)). Bu kitob `books:sync` dan keyin ham qaytmaydi.
+- Ma'lumotlarni qayta yig'ishda manbalarning foydalanish shartlariga rioya qiling (so'rovlar orasidagi oraliqlarni
+  kamaytirmang).
 
 ## Muammolarni hal qilish
 
