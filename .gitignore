@@ -1,0 +1,22 @@
+# dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.vercel/
+
+# local environment (this app needs none, but never commit secrets)
+.env
+.env.*
+!.env.example
+
+# ingestion scripts: downloaded catalog cache (~21 MB) and resume state
+scripts/.pg_catalog.csv
+scripts/.state.json
+
+# OS / editor / logs
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
