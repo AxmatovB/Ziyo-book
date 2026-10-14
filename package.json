@@ -1,13 +1,38 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
-
+{
+  "name": "ziyo-kutubxonasi",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "books:gutenberg": "node scripts/fetch-gutenberg.mjs",
+    "books:ia": "node scripts/add-sources.mjs",
+    "books:add": "node scripts/add-sources.mjs",
+    "books:sync": "node scripts/sync-all.mjs",
+    "books:catalog": "node scripts/sync-gutenberg-catalog.mjs",
+    "books:librivox": "node scripts/sync-librivox.mjs",
+    "books:ziyouz": "node scripts/sync-ziyouz.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "description": "Ziyo Kutubxonasi: rus, jahon va o'zbek adabiyotining bepul onlayn kutubxonasi"
+}

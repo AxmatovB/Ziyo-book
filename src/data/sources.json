@@ -1,0 +1,155 @@
+{
+  "_readme": "Manifest for `npm run books:add`. 'archive' groups take Internet Archive identifiers ('ids') or a search 'query'; optional 'overrides' fix title/author/years/description per identifier. 'urls' take any readable page/PDF that allows being embedded in an iframe. Only add works you are sure are public domain or openly licensed.",
+  "archive": [
+    {
+      "category": "O'zbek adabiyoti",
+      "language": "uzb",
+      "ids": [
+        "otkan-kunlar.-abdulla-qodiriy",
+        "Boburnoma-ZahiriddinMuhammadBobur",
+        "Munojotnoma-AlisherNavoiy",
+        "hikmatlar-alisher-navoiy",
+        "QaroKozim-AlisherNavoiy",
+        "SelectedGazelsOfNavoiy",
+        "mahbublkulub00alisuoft"
+      ],
+      "overrides": {
+        "otkan-kunlar.-abdulla-qodiriy": {
+          "title": "O'tkan kunlar",
+          "author": "Abdulla Qodiriy",
+          "years": "1894–1938",
+          "description": "O'zbek adabiyotining birinchi romani: Otabek va Kumushning sevgi tarixi orqali XIX asr o'rtalaridagi Turkiston hayoti, urf-odatlari va ijtimoiy ziddiyatlari tasvirlanadi."
+        },
+        "Boburnoma-ZahiriddinMuhammadBobur": {
+          "title": "Boburnoma",
+          "author": "Zahiriddin Muhammad Bobur",
+          "years": "1483–1530",
+          "description": "Bobur xotiralari: Farg'ona, Samarqand, Kobul va Hindiston haqidagi tarixiy, geografik va shaxsiy yozuvlar. Sharq xotira janrining durdonasi."
+        },
+        "Munojotnoma-AlisherNavoiy": {
+          "title": "Munojotnoma",
+          "author": "Alisher Navoiy",
+          "years": "1441–1501",
+          "description": "Navoiyning Alloh bilan dardlashuv ruhidagi ilohiy she'riy asari."
+        },
+        "hikmatlar-alisher-navoiy": {
+          "title": "Hikmatlar",
+          "author": "Alisher Navoiy",
+          "years": "1441–1501",
+          "description": "Navoiy ijodidan hikmatli so'zlar va falsafiy fikrlar to'plami."
+        },
+        "QaroKozim-AlisherNavoiy": {
+          "title": "Qaro ko'zim",
+          "author": "Alisher Navoiy",
+          "years": "1441–1501",
+          "description": "Navoiyning mashhur g'azallaridan namunalar."
+        },
+        "SelectedGazelsOfNavoiy": {
+          "title": "Navoiy g'azallaridan tanlanma",
+          "author": "Alisher Navoiy",
+          "years": "1441–1501",
+          "description": "Alisher Navoiy g'azallaridan tanlangan namunalar."
+        },
+        "mahbublkulub00alisuoft": {
+          "title": "Mahbub ul-qulub",
+          "author": "Alisher Navoiy",
+          "years": "1441–1501",
+          "description": "Navoiyning so'nggi nasriy asari: turli toifadagi odamlar, ularning xulq-atvori va jamiyatdagi o'rni haqida mulohazalar."
+        }
+      }
+    },
+    {
+      "category": "Rus adabiyoti",
+      "language": "rus",
+      "ids": [
+        "vojna_i_mir_1912_tom_1",
+        "zapiski-iz-podpolya",
+        "BedniLjudi",
+        "Zapiski-ohotnika-Turgenev",
+        "gogol-nicolai.-taras-bulba.-the-tale-of-the-cossaks",
+        "lermontova00lermgoog",
+        "1905_20230109",
+        "1922_20230109",
+        "pushkin_sobranie_full",
+        "1873_dostoevskij",
+        "ThoughtsOfWisePeople_LevTolstoy",
+        "gogol-1"
+      ],
+      "overrides": {
+        "vojna_i_mir_1912_tom_1": {
+          "title": "Война и мир. Том 1",
+          "author": "Лев Толстой",
+          "years": "1828–1910",
+          "description": "1912 yilgi nashr. 1805–1812 yillardagi Rossiya jamiyati va Napoleon urushlari fonida bir necha oila taqdiri."
+        },
+        "zapiski-iz-podpolya": {
+          "title": "Записки из подполья",
+          "author": "Фёдор Достоевский",
+          "years": "1821–1881",
+          "description": "Jamiyatdan ajralgan \"yer osti odami\" monologi. Dostoyevskiy ijodidagi burilish nuqtasi."
+        },
+        "BedniLjudi": {
+          "title": "Бедные люди",
+          "author": "Фёдор Достоевский",
+          "years": "1821–1881",
+          "description": "Dostoyevskiyning birinchi romani: kambag'al amaldor va yosh qiz o'rtasidagi maktublar orqali yozilgan."
+        },
+        "Zapiski-ohotnika-Turgenev": {
+          "title": "Записки охотника",
+          "author": "Иван Тургенев",
+          "years": "1818–1883",
+          "description": "Ovchi nigohi bilan yozilgan hikoyalar turkumi: Rossiya qishlog'i, dehqonlar va yer egalari hayoti."
+        },
+        "gogol-nicolai.-taras-bulba.-the-tale-of-the-cossaks": {
+          "title": "Тарас Бульба",
+          "author": "Николай Гоголь",
+          "years": "1809–1852",
+          "description": "Qozoqlar hayoti va ularning ozodlik uchun kurashi haqida tarixiy qissa."
+        },
+        "lermontova00lermgoog": {
+          "title": "Стихотворения",
+          "author": "Михаил Лермонтов",
+          "years": "1814–1841",
+          "description": "Lermontov she'rlari to'plami eski nashrda."
+        },
+        "1905_20230109": {
+          "title": "Сказка о царе Салтане",
+          "author": "Александр Пушкин",
+          "years": "1799–1837",
+          "description": "Pushkinning mashhur ertagi, 1905 yilgi nashr, I. Bilibin rasmlari bilan."
+        },
+        "1922_20230109": {
+          "title": "Сказка о рыбаке и рыбке",
+          "author": "Александр Пушкин",
+          "years": "1799–1837",
+          "description": "Pushkinning baliqchi va oltin baliq haqidagi ertagi, 1922 yilgi rasmli nashr."
+        },
+        "pushkin_sobranie_full": {
+          "title": "Сочинения",
+          "author": "Александр Пушкин",
+          "years": "1799–1837",
+          "description": "Pushkin asarlarining eski to'plami: she'rlar, poemalar va nasr."
+        },
+        "1873_dostoevskij": {
+          "title": "Дневник писателя за 1873 год",
+          "author": "Фёдор Достоевский",
+          "years": "1821–1881",
+          "description": "Dostoyevskiyning publitsistik yozuvlari: jamiyat, adabiyot va davr masalalari haqida."
+        },
+        "ThoughtsOfWisePeople_LevTolstoy": {
+          "title": "Мысли мудрых людей на каждый день",
+          "author": "Лев Толстой",
+          "years": "1828–1910",
+          "description": "Tolstoy to'plagan hikmatli fikrlar: har kun uchun bittadan o'qish."
+        },
+        "gogol-1": {
+          "title": "Иллюстрированное полное собрание сочинений",
+          "author": "Николай Гоголь",
+          "years": "1809–1852",
+          "description": "Gogol asarlarining rasmli to'plami."
+        }
+      }
+    }
+  ],
+  "urls": []
+}
